@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 
 <html>
 <head>
@@ -63,7 +64,12 @@
                 <td>${orderItem.item.itemName}</td>
                 <td>${orderItem.pricePerItem}</td>
                 <td>${orderItem.amount}</td>
-                <td>${orderItem.pricePerItem * orderItem.amount}</td>
+                <td>
+                    <fmt:formatNumber
+                            value="${orderItem.pricePerItem * orderItem.amount}"
+                            minFractionDigits="2"
+                            maxFractionDigits="2"/>
+                </td>
             </tr>
         </c:forEach>
     </table>
