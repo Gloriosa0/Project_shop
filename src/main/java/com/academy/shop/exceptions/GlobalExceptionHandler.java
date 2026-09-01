@@ -19,7 +19,6 @@ public class GlobalExceptionHandler {
         model.addAttribute("status", HttpStatus.BAD_REQUEST.value());
         model.addAttribute("error", "Некорректный запрос");
         model.addAttribute("message", e.getMessage());
-        e.printStackTrace();
 
         return "error";
     }
@@ -29,7 +28,6 @@ public class GlobalExceptionHandler {
         model.addAttribute("status", HttpStatus.CONFLICT.value());
         model.addAttribute("error", "Операция невозможна");
         model.addAttribute("message", e.getMessage());
-        e.printStackTrace();
 
         return "error";
     }
@@ -39,7 +37,6 @@ public class GlobalExceptionHandler {
         model.addAttribute("status", HttpStatus.NOT_FOUND.value());
         model.addAttribute("error", "Объект не найден");
         model.addAttribute("message", "Запрашиваемый объект не существует");
-        e.printStackTrace();
 
         return "error";
     }
@@ -49,7 +46,6 @@ public class GlobalExceptionHandler {
         model.addAttribute("status", HttpStatus.NOT_FOUND.value());
         model.addAttribute("error", "Пользователь не найден");
         model.addAttribute("message", e.getMessage());
-        e.printStackTrace();
 
         return "error";
     }
@@ -60,7 +56,6 @@ public class GlobalExceptionHandler {
         model.addAttribute("error", "Некорректный параметр");
         model.addAttribute("message", "Параметр '"
                 + e.getName() + "' имеет неверный формат");
-        e.printStackTrace();
 
         return "error";
     }
@@ -71,7 +66,6 @@ public class GlobalExceptionHandler {
         model.addAttribute("error", "Отсутствует параметр");
         model.addAttribute("message", "Не указан обязательный параметр: "
                 + e.getParameterName());
-        e.printStackTrace();
 
         return "error";
     }
@@ -82,7 +76,6 @@ public class GlobalExceptionHandler {
         model.addAttribute("error", "Ошибка базы данных");
         model.addAttribute("message",
                 "Операцию невозможно выполнить из-за ограничений базы данных");
-        e.printStackTrace();
 
         return "error";
     }
@@ -93,7 +86,6 @@ public class GlobalExceptionHandler {
         model.addAttribute("error", "Доступ запрещён");
         model.addAttribute("message",
                 "У вас недостаточно прав для выполнения этой операции");
-        e.printStackTrace();
 
         return "error";
     }
@@ -104,7 +96,6 @@ public class GlobalExceptionHandler {
         model.addAttribute("error", "Внутренняя ошибка");
         model.addAttribute("message",
                 "Произошла непредвиденная ошибка. Попробуйте повторить операцию позже.");
-        e.printStackTrace();
 
         return "error";
     }

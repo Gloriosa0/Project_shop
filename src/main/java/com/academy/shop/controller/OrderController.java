@@ -120,7 +120,7 @@ public class OrderController {
     ) {
         orderService.changeOrderStatus(id, status);
 
-        return "redirect:/orders/" + id;
+        return "redirect:/orders/admin/" + id;
     }
 
     @PostMapping("/admin/{id}/comment")
@@ -130,6 +130,6 @@ public class OrderController {
     ){
         orderService.changeComment(id, comment);
 
-        return "redirect:/orders/" + id;
+        return "redirect:/orders/admin/" + id;
     }
 }

@@ -14,8 +14,6 @@ public class CartSessionManager {
 
     private static final String LAST_INTERACTION = "cartLastInteraction";
 
-    private static final String CART_ATTRIBUTE = "cart";
-
     private final Map<String, HttpSession> sessions =
             new ConcurrentHashMap<>();
 
