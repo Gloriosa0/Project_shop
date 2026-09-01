@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <html>
 <head>
@@ -77,6 +78,7 @@
     </form>
 </div>
 <div class="admin-block">
+    <sec:authorize access="hasRole('ROLE_ADMIN')">
     <h2>Администрирование заказа</h2>
     <h3>Изменить статус</h3>
     <form method="post"
@@ -100,6 +102,7 @@
         <br>
         <button type="submit">Сохранить комментарий</button>
     </form>
+    </sec:authorize>
 </div>
 <br>
 <a href="${pageContext.request.contextPath}/orders"> Вернуться к заказам </a>
